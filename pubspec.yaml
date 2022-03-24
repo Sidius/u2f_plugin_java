@@ -29,7 +29,7 @@ flutter:
     platforms:
       android:
         package: com.example.u2f_plugin_java
-        pluginClass: U2fPluginJavaPlugin
+        pluginClass: U2FPlugin
       ios:
         pluginClass: U2fPluginJavaPlugin
 
