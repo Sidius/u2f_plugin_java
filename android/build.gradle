@@ -35,6 +35,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.yubico.yubikit:android:2.0.0'
+
     // Play services
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
     //implementation 'com.google.android.gms:play-services-fido:18.1.0'
@@ -53,6 +55,10 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+//    implementation files('E:\\Programs\\flutter\\bin\\cache\\artifacts\\engine\\android-x64\\flutter.jar')
 
 //    implementation "androidx.datastore:datastore-preferences:1.0.0"
 //
