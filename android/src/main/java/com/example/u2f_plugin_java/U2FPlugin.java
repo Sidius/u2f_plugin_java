@@ -2,7 +2,6 @@ package com.example.u2f_plugin_java;
 
 import android.app.Activity;
 import android.content.Context;
-import android.hardware.usb.UsbDevice;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
@@ -48,28 +47,18 @@ public class U2FPlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         if (call.method.equals("getAuth")) {
             yubiKitManager.startUsbDiscovery(new UsbConfiguration(), device -> {
-                // A YubiKey was plugged in
-                //result.success(device);
                 if(!device.hasPermission()) {
-                    // Using the default UsbConfiguration this will never happen, as permission will automatically
-                    // be requested by the YubiKitManager, and this method won't be invoked unless it is granted.
                     result.success("NOT");
                 }
-
                 result.success("WORKING");
 
                 device.setOnClosed(() -> {
-                    // Do something when the YubiKey is removed
                 });
             });
             //result.success("Android " + android.os.Build.VERSION.RELEASE);
         } else if (call.method.equals(Settings.START_USB_DISCOVERY)) {
             yubiKitManager.startUsbDiscovery(new UsbConfiguration(), device -> {
-                // A YubiKey was plugged in
-                //result.success(device);
                 if(!device.hasPermission()) {
-                    // Using the default UsbConfiguration this will never happen, as permission will automatically
-                    // be requested by the YubiKitManager, and this method won't be invoked unless it is granted.
                     result.success(false);
                 }
                 usbYubiKeyDevice = device;

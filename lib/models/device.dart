@@ -1,11 +1,11 @@
 
 class Device {
 
-  String deviceName;
-  String manufacturerName;
-  String productName;
-  String version;
-  String serialNumber;
+  String? deviceName;
+  String? manufacturerName;
+  String? productName;
+  String? version;
+  String? serialNumber;
   int deviceId;
   int vendorId;
   int productId;
@@ -60,11 +60,11 @@ class Device {
 
   factory Device.fromJson(Map<String, dynamic> json) {
     return Device(
-      deviceName: json['deviceName'] as String,
-      manufacturerName: json['manufacturerName'] as String,
-      productName: json['productName'] as String,
-      version: json['version'] as String,
-      serialNumber: json['serialNumber'] as String,
+      deviceName: json['deviceName'] as String?,
+      manufacturerName: json['manufacturerName'] as String?,
+      productName: json['productName'] as String?,
+      version: json['version'] as String?,
+      serialNumber: json['serialNumber'] as String?,
       deviceId: json['deviceId'] as int,
       vendorId: json['vendorId'] as int,
       productId: json['productId'] as int,
