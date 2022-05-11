@@ -45,18 +45,7 @@ public class U2FPlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-        if (call.method.equals("getAuth")) {
-            yubiKitManager.startUsbDiscovery(new UsbConfiguration(), device -> {
-                if(!device.hasPermission()) {
-                    result.success("NOT");
-                }
-                result.success("WORKING");
-
-                device.setOnClosed(() -> {
-                });
-            });
-            //result.success("Android " + android.os.Build.VERSION.RELEASE);
-        } else if (call.method.equals(Settings.START_USB_DISCOVERY)) {
+        if (call.method.equals(Settings.START_USB_DISCOVERY)) {
             yubiKitManager.startUsbDiscovery(new UsbConfiguration(), device -> {
                 if(!device.hasPermission()) {
                     result.success(false);
