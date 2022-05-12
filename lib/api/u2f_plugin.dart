@@ -21,6 +21,11 @@ class U2FPlugin {
     return response;
   }
 
+  static Future<String?> openConnection() async {
+    final String? response = await _channel.invokeMethod(Settings.openConnection);
+    return response;
+  }
+
   static stopUSBDiscovery() async {
     await _channel.invokeMethod(Settings.stopUSBDiscovery);
   }
