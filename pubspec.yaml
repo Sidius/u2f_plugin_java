@@ -1,7 +1,7 @@
 name: u2f_plugin_java
-description: A new Flutter project.
-version: 0.0.1
-homepage:
+description: Plugin about U2F Android authentification with Java plugin with
+version: 0.0.3
+homepage: https://github.com/Sidius/u2f_plugin_java
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
